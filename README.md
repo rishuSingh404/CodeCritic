@@ -3,7 +3,6 @@
 An AI-powered code review and analysis tool that provides intelligent feedback on your code with modular processing capabilities.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-red.svg)](https://streamlit.io)
 
 ## ✨ Features
@@ -142,15 +141,6 @@ pytest --cov=codecritic
 5. Add your API keys as secrets
 6. Deploy!
 
-### Docker (Coming Soon)
-```bash
-docker build -t codecritic .
-docker run -p 8501:8501 codecritic
-```
-
-## 📝 License
-
-MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🤝 Contributing
 
