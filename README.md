@@ -184,4 +184,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-**Built with ❤️ by [Rishu Kumar Singh](https://github.com/rishuSingh404) from IIT Patna**
+**Built with ❤️ by [Rishu Kumar Singh](https://github.com/rishuSingh404)**
