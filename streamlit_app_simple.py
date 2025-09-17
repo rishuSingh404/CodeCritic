@@ -441,7 +441,7 @@ with col2:
                 </div>
                 {f'<div class="issue-suggestion"><strong>💡 Suggestion:</strong> {item["suggestion"]}</div>' if item.get("suggestion") else ''}
                 {f'<div style="margin-top: 0.5rem;"><strong>Function:</strong> <code>{item["function_name"]}</code></div>' if item.get("function_name") else ''}
-                {f'<div style="margin-top: 0.5rem;"><strong>Tags:</strong> {", ".join([f"<span style="background: #e5e7eb; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">{tag}</span>" for tag in item.get("tags", [])])}</div>' if item.get("tags") else ''}
+                {f'<div style="margin-top: 0.5rem;"><strong>Tags:</strong> ' + "".join([f'<span style="background: #e5e7eb; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">{tag}</span>' for tag in item.get("tags", [])]) + '</div>' if item.get("tags") else ''}
             </div>
             ''', unsafe_allow_html=True)
     else:
