@@ -51,6 +51,7 @@ coverage.xml
 # Local Development
 .env
 .env.local
+.streamlit/secrets.toml
 
 # Build
 .build/
