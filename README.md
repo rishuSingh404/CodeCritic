@@ -18,7 +18,25 @@ An AI-powered code review and analysis tool that provides intelligent feedback o
 
 ## 🏗️ Architecture
 
-*[Architecture diagram and detailed system design will be added here]*
+```mermaid
+graph TD
+    A[User Input] --> B[Core Engine]
+    B --> C{Parser Module}
+    C --> D[Python Parser]
+    C --> E[JS/TS Parser]
+    C --> F[Other Parsers]
+    B --> G[LLM Provider]
+    G --> H[OpenAI]
+    G --> I[Anthropic]
+    G --> J[Google Gemini]
+    G --> K[Mistral AI]
+    B --> L[Cache System]
+    B --> M[Rate Limiter]
+    L --> N[Results]
+    M --> N
+    N --> O[Web Interface]
+    N --> P[API Endpoint]
+```
 
 ### System Components:
 - **Core Engine**: AI-powered code analysis using multiple LLM providers
