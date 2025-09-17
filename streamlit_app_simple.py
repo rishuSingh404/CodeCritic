@@ -84,8 +84,6 @@ with st.sidebar:
     
     # Analysis options
     
-    st.markdown("---")
-    st.markdown("**Built with ❤️ by [Rishu Kumar Singh](https://github.com/rishuSingh404) **")
 
 # Main content
 col1, col2 = st.columns([1, 1])
@@ -121,7 +119,7 @@ with col1:
         # Single code input
         code_input = st.text_area(
             "Paste your code here:",
-            height=400,
+            height=200,
             placeholder=placeholder
         )
         uploaded_files = None
