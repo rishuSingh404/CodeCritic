@@ -388,6 +388,5 @@ st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #666; padding: 1rem;">
     <p>🔍 CodeCritic v1.0.0 | Built with Streamlit</p>
-    <p>Deploy your own instance or visit: <a href="https://codecritic-rishu.streamlit.app">codecritic-rishu.streamlit.app</a></p>
 </div>
 """, unsafe_allow_html=True)
