@@ -62,16 +62,6 @@ with st.sidebar:
     if os.getenv("MISTRAL_API_KEY"):
         available_keys.append("Mistral")
     
-    if available_keys:
-        st.success(f"✅ API Keys loaded: {', '.join(available_keys)}")
-        api_key = "ENV_LOADED"
-    else:
-        st.warning("⚠️ No API keys found in environment")
-        api_key = st.text_input(
-            "API Key",
-            type="password",
-            help="Enter your Anthropic or OpenAI API key"
-        )
     
     # Model selection
     model = st.selectbox(
@@ -93,13 +83,9 @@ with st.sidebar:
     )
     
     # Analysis options
-    st.subheader("🔧 Analysis Options")
-    enable_modular = st.checkbox("Enable Modular Review", value=True)
-    include_security = st.checkbox("🔒 Security Analysis", value=True)
-    include_performance = st.checkbox("⚡ Performance Analysis", value=True)
     
     st.markdown("---")
-    st.markdown("**Built with ❤️ by [Rishu Kumar Singh](https://github.com/rishuSingh404) from IIT Patna**")
+    st.markdown("**Built with ❤️ by [Rishu Kumar Singh](https://github.com/rishuSingh404) **")
 
 # Main content
 col1, col2 = st.columns([1, 1])
