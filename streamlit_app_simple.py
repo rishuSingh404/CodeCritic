@@ -15,254 +15,43 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Professional CSS
+# Custom CSS
 st.markdown("""
 <style>
-    /* Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    
-    /* Global Styles */
-    .main {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    
-    /* Header Styles */
     .main-header {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        text-align: center;
-        margin-bottom: 0.5rem;
-        letter-spacing: -0.02em;
-    }
-    
-    .sub-header {
-        font-size: 1.1rem;
-        color: #6b7280;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #1f77b4;
         text-align: center;
         margin-bottom: 2rem;
-        font-weight: 400;
     }
-    
-    /* Card Styles */
+    .feedback-bug { color: #d62728; }
+    .feedback-practice { color: #ff7f0e; }
+    .feedback-performance { color: #2ca02c; }
+    .feedback-style { color: #9467bd; }
+    .feedback-security { color: #e377c2; }
     .metric-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 1.5rem;
-        border-radius: 12px;
-        margin: 0.5rem 0;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        border: none;
-    }
-    
-    .metric-card h3 {
-        color: white;
-        font-size: 0.875rem;
-        font-weight: 500;
-        margin: 0 0 0.5rem 0;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    
-    .metric-card .metric-value {
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 0;
-    }
-    
-    /* Issue Cards */
-    .issue-card {
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        padding: 1.25rem;
-        margin: 0.75rem 0;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-        transition: all 0.2s ease;
-    }
-    
-    .issue-card:hover {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transform: translateY(-1px);
-    }
-    
-    .issue-title {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #1f2937;
-        margin: 0 0 0.5rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .issue-description {
-        color: #6b7280;
-        font-size: 0.875rem;
-        line-height: 1.5;
-        margin: 0 0 0.75rem 0;
-    }
-    
-    .issue-suggestion {
-        background: #f8fafc;
-        border-left: 3px solid #3b82f6;
-        padding: 0.75rem;
-        border-radius: 0 4px 4px 0;
-        font-size: 0.875rem;
-        color: #374151;
-    }
-    
-    /* Severity Badges */
-    .severity-critical { 
-        background: linear-gradient(135deg, #ef4444, #dc2626);
-        color: white;
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    
-    .severity-high { 
-        background: linear-gradient(135deg, #f97316, #ea580c);
-        color: white;
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    
-    .severity-medium { 
-        background: linear-gradient(135deg, #eab308, #ca8a04);
-        color: white;
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    
-    .severity-low { 
-        background: linear-gradient(135deg, #22c55e, #16a34a);
-        color: white;
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    
-    /* Section Headers */
-    .section-header {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #1f2937;
-        margin: 1.5rem 0 1rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    /* Code Input Area */
-    .code-input-container {
-        background: #f8fafc;
-        border: 2px solid #e5e7eb;
-        border-radius: 8px;
+        background-color: #f0f2f6;
         padding: 1rem;
-        margin: 1rem 0;
+        border-radius: 0.5rem;
+        margin: 0.5rem 0;
     }
-    
-    /* Button Styles */
-    .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 0.75rem 2rem;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Sidebar Styles */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-    }
-    
-    /* Status Indicators */
-    .status-success {
-        background: linear-gradient(135deg, #10b981, #059669);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .status-warning {
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    /* Footer */
-    .footer {
-        text-align: center;
-        color: #9ca3af;
-        font-size: 0.875rem;
-        margin-top: 3rem;
-        padding: 2rem 0;
-        border-top: 1px solid #e5e7eb;
-    }
-    
-    /* Loading Animation */
-    .loading-spinner {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 3px solid #f3f3f3;
-        border-top: 3px solid #667eea;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+    .severity-critical { background-color: #ffebee; border-left: 4px solid #f44336; }
+    .severity-high { background-color: #fff3e0; border-left: 4px solid #ff9800; }
+    .severity-medium { background-color: #fff8e1; border-left: 4px solid #ffc107; }
+    .severity-low { background-color: #f1f8e9; border-left: 4px solid #4caf50; }
 </style>
 """, unsafe_allow_html=True)
 
-# Professional Header
+# Header
 st.markdown('<h1 class="main-header">🔍 CodeCritic</h1>', unsafe_allow_html=True)
-st.markdown('<p class="sub-header">AI-powered code review and analysis tool</p>', unsafe_allow_html=True)
+st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666;">AI-powered code review and analysis tool</p>', unsafe_allow_html=True)
 
-# Add a subtle divider
-st.markdown("---")
-
-# Professional Sidebar
+# Sidebar configuration
 with st.sidebar:
-    st.markdown("### ⚙️ Configuration")
+    st.header("⚙️ Configuration")
     
-    # API Keys Status
+    # Check if API keys are available from environment
     available_keys = []
     if os.getenv("OPENAI_API_KEY"):
         available_keys.append("OpenAI")
@@ -274,15 +63,14 @@ with st.sidebar:
         available_keys.append("Mistral")
     
     if available_keys:
-        st.markdown(f'<div class="status-success">✅ API Keys loaded: {", ".join(available_keys)}</div>', unsafe_allow_html=True)
+        st.success(f"✅ API Keys loaded: {', '.join(available_keys)}")
         api_key = "ENV_LOADED"
     else:
-        st.markdown('<div class="status-warning">⚠️ No API keys found in environment</div>', unsafe_allow_html=True)
+        st.warning("⚠️ No API keys found in environment")
         api_key = st.text_input(
             "API Key",
             type="password",
-            help="Enter your Anthropic or OpenAI API key",
-            placeholder="sk-..."
+            help="Enter your Anthropic or OpenAI API key"
         )
     
     # Model selection
@@ -313,21 +101,18 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("**Built with ❤️ by [Rishu Kumar Singh](https://github.com/rishuSingh404) from IIT Patna**")
 
-# Main content with professional layout
+# Main content
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.markdown('<h2 class="section-header">📝 Input Code</h2>', unsafe_allow_html=True)
+    st.header("📝 Input Code")
     
-    # Professional code input container
-    st.markdown('<div class="code-input-container">', unsafe_allow_html=True)
+    # Code input
     code_input = st.text_area(
         "Paste your code here:",
         height=400,
-        placeholder="def example_function():\n    # Your code here\n    return 'Hello, World!'",
-        label_visibility="collapsed"
+        placeholder="def example_function():\n    # Your code here\n    return 'Hello, World!'"
     )
-    st.markdown('</div>', unsafe_allow_html=True)
     
     # Review button
     if st.button("🔍 Review Code", type="primary", use_container_width=True):
@@ -378,81 +163,72 @@ with col1:
                     st.error(f"Error during analysis: {str(e)}")
 
 with col2:
-    st.markdown('<h2 class="section-header">🔍 Review Results</h2>', unsafe_allow_html=True)
+    st.header("🔍 Review Results")
     
     if 'review_result' in st.session_state:
         result = st.session_state.review_result
         
-        # Professional metrics cards
+        # Summary metrics
         col_metrics1, col_metrics2, col_metrics3, col_metrics4 = st.columns(4)
         
         with col_metrics1:
-            st.markdown(f'''
-            <div class="metric-card">
-                <h3>Total Issues</h3>
-                <div class="metric-value">{result["total_issues"]}</div>
-            </div>
-            ''', unsafe_allow_html=True)
+            st.metric("Total Issues", result["total_issues"])
         
         with col_metrics2:
-            st.markdown(f'''
-            <div class="metric-card">
-                <h3>Processing Time</h3>
-                <div class="metric-value">{result["processing_time"]:.1f}s</div>
-            </div>
-            ''', unsafe_allow_html=True)
+            st.metric("Processing Time", f"{result['processing_time']:.1f}s")
         
         with col_metrics3:
-            st.markdown(f'''
-            <div class="metric-card">
-                <h3>Model Used</h3>
-                <div class="metric-value">{result["model_used"].split("/")[-1]}</div>
-            </div>
-            ''', unsafe_allow_html=True)
+            st.metric("Model Used", result["model_used"].split("/")[-1])
         
         with col_metrics4:
-            st.markdown(f'''
-            <div class="metric-card">
-                <h3>Modular Analysis</h3>
-                <div class="metric-value">{"✅" if result["modular_analysis"] else "❌"}</div>
-            </div>
-            ''', unsafe_allow_html=True)
+            st.metric("Modular Analysis", "✅" if result["modular_analysis"] else "❌")
         
         # Summary
         st.markdown("### 📋 Summary")
         st.info(result["summary"])
         
-        # Professional feedback display
-        st.markdown('<h3 class="section-header">📋 Detailed Feedback</h3>', unsafe_allow_html=True)
+        # Detailed feedback
+        st.markdown("### 📋 Detailed Feedback")
         
         for item in result["feedback"]:
             severity = item.get("severity", "medium")
             confidence = item.get("confidence", 0.8)
             
-            # Professional issue card
-            st.markdown(f'''
-            <div class="issue-card">
-                <div class="issue-title">
-                    <span class="severity-{severity}">{severity.upper()}</span>
-                    {item['message']}
-                </div>
-                <div class="issue-description">
-                    Confidence: {confidence:.1%} | Severity: {severity.title()}
-                </div>
-                {f'<div class="issue-suggestion"><strong>💡 Suggestion:</strong> {item["suggestion"]}</div>' if item.get("suggestion") else ''}
-                {f'<div style="margin-top: 0.5rem;"><strong>Function:</strong> <code>{item["function_name"]}</code></div>' if item.get("function_name") else ''}
-                {f'<div style="margin-top: 0.5rem;"><strong>Tags:</strong> ' + "".join([f'<span style="background: #e5e7eb; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">{tag}</span>' for tag in item.get("tags", [])]) + '</div>' if item.get("tags") else ''}
+            severity_color = {
+                "critical": "🔴",
+                "high": "🟠", 
+                "medium": "🟡",
+                "low": "🟢"
+            }.get(severity, "⚪")
+            
+            severity_class = f"severity-{severity}"
+            
+            st.markdown(f"""
+            <div class="{severity_class}" style="padding: 1rem; margin: 0.5rem 0; border-radius: 0.5rem;">
+                <strong>{severity_color} {item['message']}</strong><br>
+                <small>Confidence: {confidence:.1%} | Severity: {severity.title()}</small>
             </div>
-            ''', unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
+            
+            if item.get("function_name"):
+                st.markdown(f"*Function: `{item['function_name']}`*")
+            
+            if item.get("suggestion"):
+                st.markdown(f"**💡 Suggestion:** {item['suggestion']}")
+            
+            if item.get("tags"):
+                tags_str = ", ".join([f"`{tag}`" for tag in item["tags"]])
+                st.markdown(f"**🏷️ Tags:** {tags_str}")
+            
+            st.markdown("---")
     else:
         st.info("👈 Enter your code and click 'Review Code' to get started!")
 
-# Professional Footer
+# Footer
 st.markdown("---")
 st.markdown("""
-<div class="footer">
-    <p><strong>🔍 CodeCritic v1.0.0</strong> | Built with Streamlit & AI</p>
-    <p>Deploy your own instance or visit: <a href="https://codecritic-rishu.streamlit.app" style="color: #667eea; text-decoration: none;">codecritic-rishu.streamlit.app</a></p>
-    <p style="margin-top: 1rem; font-size: 0.75rem;">© 2025 Rishu Kumar Singh | IIT Patna</p>
+<div style="text-align: center; color: #666; padding: 1rem;">
+    <p>🔍 CodeCritic v1.0.0 | Built with Streamlit</p>
+    <p>Deploy your own instance or visit: <a href="https://codecritic-rishu.streamlit.app">codecritic-rishu.streamlit.app</a></p>
 </div>
 """, unsafe_allow_html=True)
